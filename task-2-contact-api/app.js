@@ -17,7 +17,7 @@ app.post("/api/contact", (req, res) => {
 
     // create {id: message.length + 1, name, email, message }
     // and push it into the messages array
-    messages.push({id: messages.length + 1, name, email, message });
+    messages.push({id: messages.length + 1, name, email: email.trim().toLowerCase(), message });
 
     res.status(201).json({ success: true, message: `Thanks ${name}!` });
 });
